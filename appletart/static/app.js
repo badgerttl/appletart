@@ -463,7 +463,7 @@ function renderMachines() {
       }
       if (!machine.running) actions.append(control("Destroy", "destroy", () => destroy(machine)));
       }
-      if (machine.running && health?.ssh_ready && !job) {
+      if (machine.running && health?.ip && !job) {
         const ssh = control(sshLaunching.has(config.name) ? "Opening SSH…" : "SSH", "ssh", () => sshShortcut(machine, true));
         ssh.disabled = sshLaunching.has(config.name); ssh.setAttribute("aria-busy", String(ssh.disabled)); actions.append(ssh);
       }

@@ -322,6 +322,18 @@ test("SSH config action requires a current IP and writes the selected VM once", 
   assert.match(ui.document.getElementById("toast").textContent, /ssh vm/);
 });
 
+test("SSH action remains available with a guest IP when background SSH checks fail", () => {
+  const ui = dashboard();
+  ui.run('state.machines = [{managed:true, exists:true, owned:true, running:true, phase:"ready", config:{name:"vm", os:"ubuntu", cpu:2, memory_mb:4096, disk_gb:40, network:"nat"}}]; addresses.set("vm", {health:{ip:"192.0.2.10", ssh_available:false, ssh_ready:false, agent_privileged:true}}); renderMachines();');
+  const action = () => find(ui.document.getElementById("machines"), "button", element => element.getAttribute("aria-label") === "SSH");
+  assert.ok(action(), "background readiness checks hide the interactive SSH action");
+  assert.equal(action().disabled, false);
+  ui.run('addresses.set("vm", {health:{ip:"", ssh_ready:false}}); renderMachines();');
+  assert.equal(action(), undefined, "SSH requires a current guest IP");
+  ui.run('addresses.set("vm", {health:{ip:"192.0.2.10", ssh_ready:false}}); state.machines[0].running = false; renderMachines();');
+  assert.equal(action(), undefined, "stopped VMs cannot open SSH");
+});
+
 test("SSH launch shows pending feedback and blocks repeated clicks across polling", async () => {
   const ui = dashboard(), calls = [];
   let finish;
