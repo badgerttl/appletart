@@ -15,8 +15,11 @@ from appletart.tart import Tart
 class ValidationTests(unittest.TestCase):
     def test_plan_needs_no_tart_or_supported_host(self):
         output = io.StringIO()
-        with patch("appletart.cli.Tart", side_effect=AssertionError("Must not touch Tart")), patch("appletart.cli.read_public_keys", return_value=[]), contextlib.redirect_stdout(output):
-            self.assertEqual(main(["plan", "examples/ubuntu.toml"]), 0)
+        with tempfile.TemporaryDirectory() as directory:
+            manifest = Path(directory) / "ubuntu.toml"
+            manifest.write_text('version = 1\n[[vms]]\nname = "ubuntu-dev"\nos = "ubuntu"\nimage = "ghcr.io/cirruslabs/ubuntu:latest"\ncpu = 2\nmemory_mb = 4096\ndisk_gb = 40\nssh_user = "admin"\nssh_public_keys = ["~/.ssh/id_ed25519.pub"]\n')
+            with patch("appletart.cli.Tart", side_effect=AssertionError("Must not touch Tart")), patch("appletart.cli.read_public_keys", return_value=[]), contextlib.redirect_stdout(output):
+                self.assertEqual(main(["plan", str(manifest)]), 0)
         self.assertIn("tart clone ghcr.io/cirruslabs/ubuntu:latest ubuntu-dev", output.getvalue())
         self.assertIn("--memory 4096", output.getvalue())
 

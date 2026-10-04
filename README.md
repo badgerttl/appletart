@@ -556,8 +556,8 @@ force stop, destruction, profile import/deletion, guest-agent installation,
 and storage cleanup arguments. CLI cleanup uses repeated `--cleanup ITEM_ID`
 and `--confirm DELETE`.
 
-The original TOML `plan` and `deploy` commands remain available with manifests
-under [examples](examples/); they do not create dashboard records. `list`,
+The original TOML `plan` and `deploy` commands remain available for existing
+manifests; they do not create dashboard records. `list`,
 `run`, `stop`, and `ip` operate directly through Tart. In particular, `stop`
 is direct termination; use `shutdown` for orderly guest power-off.
 
