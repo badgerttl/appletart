@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="appletart-token" content="SESSION_TOKEN">
+  <title>AppleTart · Virtual Machines</title>
+  <link rel="icon" type="image/svg+xml" href="/icons/appletart.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/management.js" defer></script>
+  <script src="/logs.js" defer></script>
+  <script src="/users.js" defer></script>
+  <script src="/software.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/"><img class="brand-icon" src="/icons/appletart.svg" width="36" height="36" alt=""> <span>AppleTart</span></a>
+    <div class="nav-label">Management</div>
+    <button class="nav active" id="nav-vms" aria-label="Virtual Machines"><svg class="nav-icon" aria-hidden="true" focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+  <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+  <line x1="6" x2="6.01" y1="6" y2="6" />
+  <line x1="6" x2="6.01" y1="18" y2="18" />
+</svg><span>Virtual<br>Machines</span></button>
+    <button class="nav" id="nav-library"><svg class="nav-icon" aria-hidden="true" focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+</svg><span>Images &amp; Profiles</span></button>
+    <button class="nav" id="nav-settings"><svg class="nav-icon" aria-hidden="true" focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+  <circle cx="12" cy="12" r="3" />
+</svg><span>Settings</span></button>
+    <div class="sidebar-bottom"><span class="status-dot"></span> Local service<br><small>Apple Silicon · Tart</small></div>
+  </aside>
+  <main>
+    <header><span class="breadcrumb">AppleTart <span>/</span> <strong id="section-title">Virtual Machines</strong></span><div class="header-actions"><button id="theme-toggle" class="secondary" type="button" aria-label="Switch To Light Mode" title="Switch To Light Mode"><svg id="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg id="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M20.9 13.2A9 9 0 0 1 10.8 3.1 9 9 0 1 0 20.9 13.2Z"/></svg></button></div></header>
+    <div class="page">
+      <div class="heading"><h1 id="page-title">Virtual Machines</h1><button class="primary" id="new-vm">＋ New Virtual Machine</button></div>
+      <div id="error-banner" class="banner error" role="alert" hidden></div>
+      <section id="vm-view">
+        <div class="stats"><div><span>Virtual Machines</span><strong id="total-count">—</strong></div><div><span>Running</span><strong id="running-count">—</strong></div><div><span>Ready</span><strong id="ready-count">—</strong></div></div>
+        <div class="section-heading"><h2>Machines <span id="machine-count"></span></h2><div><input id="search" type="search" placeholder="Find a machine…" aria-label="Find a machine"><button id="refresh" class="secondary">↻ Refresh</button></div></div>
+        <div id="machines" class="machine-list"></div>
+      </section>
+      <section id="library-view" hidden>
+        <section class="library-section" aria-label="Deployment Profiles"><div class="section-heading"><h2>Deployment Profiles</h2><button class="secondary" id="import-profile">Import JSON</button></div><div class="library-list" id="profiles"></div></section>
+        <section class="library-section" aria-label="Golden Images"><div class="section-heading"><h2>Golden Images</h2></div><div class="library-list" id="golden-images"></div></section>
+        <section class="library-section" aria-label="Platform Profiles"><div class="section-heading"><h2>Platform Profiles</h2></div><div class="library-list" id="images"></div></section>
+      </section>
+      <section id="settings-view" hidden>
+        <section class="appearance-settings" aria-labelledby="appearance-title">
+          <div class="section-heading"><h2 id="appearance-title">Appearance</h2><label class="appearance-mode">Mode<select id="appearance-mode"><option value="light">Light</option><option value="dark">Dark</option></select></label></div>
+          <p class="hint">A little Apple history for your workspace. Choose a palette and make it yours.</p>
+          <fieldset class="theme-fieldset"><legend>Theme</legend><div id="theme-palettes" class="theme-grid"></div></fieldset>
+          <p id="appearance-status" class="hint" role="status"></p>
+        </section>
+        <div class="settings-card"><h2>SSH Connections</h2><form id="settings-form"><label>Default SSH Terminal<select id="ssh-terminal" required></select></label><label>Default SSH Public Key<input id="default-public-key" placeholder="~/.ssh/id_ed25519.pub" spellcheck="false"><small>Local .pub file for new VMs.</small></label><div class="ssh-key-choice"><span>Install SSH Public Key By Default</span><button id="default-install-ssh-key" type="button" class="toggle-button" role="switch" aria-label="Install SSH Public Key By Default" aria-checked="true"><span class="toggle-track" aria-hidden="true"></span></button></div><p class="hint">Installed terminals only. Connections use the configured SSH identity and saved guest host key.</p><div id="settings-error" class="banner error" role="alert" hidden></div><button class="primary" id="save-settings">Save Settings</button></form></div>
+        <section class="settings-section" aria-label="Software Bundles"><div class="section-heading"><h2>Software Bundles</h2><button class="secondary" id="new-bundle">＋ New bundle</button></div><div id="bundles-error" class="banner error" hidden></div><div id="software-bundles" class="library-list"></div></section>
+        <section class="settings-section" aria-label="Image Catalog"><div class="section-heading"><h2>Image Catalog</h2><div><button class="secondary" id="add-catalog-version">＋ Add version</button><button class="secondary" id="edit-catalog">Edit catalog</button></div></div><p class="hint">Catalog passwords are stored in plain text. Use the setup password field for private credentials.</p></section>
+        <section id="storage-view" class="settings-storage" aria-label="Storage"><div class="section-heading"><h2>Storage</h2><div><button class="secondary" id="refresh-storage">Refresh usage</button><button class="secondary" id="cleanup-storage">Clean up selected</button><button class="secondary danger" id="purge-unused-storage">Purge unused</button></div></div><p id="storage-summary"></p><p class="hint" id="storage-note"></p><div id="storage-error" class="banner error" hidden></div><div class="table-scroll"><table><thead><tr><th>Select</th><th>Name</th><th>Type</th><th>Allocated</th><th>Status</th></tr></thead><tbody id="storage-items"></tbody></table></div></section>
+      </section>
+      <section class="activity"><div class="section-heading"><h2>Activity</h2><span id="job-status" class="muted">No active operations</span></div><div id="job-list"><p class="muted">No operations</p></div></section>
+      <footer><a href="https://tart.run/quick-start/" target="_blank" rel="noreferrer">Tart Documentation ↗</a></footer>
+    </div>
+  </main>
+
+  <dialog id="wizard">
+    <div class="dialog-top"><h2 id="wizard-title">Create Virtual Machine</h2><button class="close" id="close-wizard" aria-label="Close wizard">×</button></div>
+    <ol class="steps"><li>01 <span>Image</span></li><li>02 <span>Resources</span></li><li>03 <span>Access</span></li><li>04 <span>Review</span></li></ol>
+    <form id="vm-form">
+      <div class="step" data-step="0">
+        <h3>Image</h3>
+        <div class="os-grid" id="os-options"></div>
+        <label>Deployment profile<select id="deployment-profile"><option value="">Platform defaults</option></select></label>
+        <label><span id="vm-name-label">Machine name</span><input name="name" id="vm-name" placeholder="ubuntu-dev" maxlength="64" required></label>
+        <label id="edit-profile-notes-label" hidden>Profile notes<textarea id="edit-profile-notes" maxlength="4000" rows="2"></textarea></label>
+        <div class="row"><label>Image type<select name="source_kind" id="source-kind"><option value="tart">Ready-made Tart image or local template</option><option value="cloud">ARM64 cloud image · unattended cloud-init</option><option value="golden">Saved golden image · clone installed disk</option><option value="iso">ARM64 installer ISO · manual installation</option></select></label></div>
+        <label id="platform-version-label" hidden>Image version / variant<select id="platform-version"></select></label>
+        <button id="add-platform-version" type="button" class="secondary">＋ Add image version</button>
+        <label id="golden-label" hidden>Golden image<select id="golden-source"></select><small id="golden-hint">Installed software is retained.</small></label>
+        <label id="source-location-label" hidden>Image location<select id="source-location"><option value="remote">HTTPS download</option><option value="local">Local file on this Mac</option></select></label>
+        <label id="source-label"><span id="source-caption">Image source</span><span class="image-source-control"><input name="source" id="source" required spellcheck="false" aria-labelledby="source-caption" aria-describedby="source-help"><button id="browse-image" type="button" class="secondary" hidden>Browse…</button></span><small id="source-help" hidden></small></label>
+        <div id="checksum-label" class="row"><label>Checksum algorithm<select id="checksum-algorithm"><option value="sha256">SHA-256</option><option value="sha512">SHA-512</option></select></label><label>Publisher checksum · optional<input id="sha256" placeholder="Leave blank or paste a SHA256 checksum" maxlength="64" spellcheck="false"><small>Leave blank to skip publisher verification. A supplied hash must match the image file.</small></label></div>
+        <label class="check" id="refresh-source-label" hidden><input type="checkbox" id="refresh-source"> Download again, even when a cached source exists</label>
+        <p class="hint" id="image-hint"></p>
+      </div>
+      <div class="step" data-step="1" hidden>
+        <h3>Resources</h3>
+        <div class="size-grid" id="size-options"></div>
+        <div class="row"><label>CPU cores<input type="number" name="cpu" id="cpu" min="1" max="128" required></label><label>Memory (MB)<input type="number" name="memory_mb" id="memory" min="512" step="512" required></label><label>Disk (GB)<input type="number" name="disk_gb" id="disk" min="1" max="65535" required></label></div>
+        <p class="hint">The disk is a maximum capacity. Existing image disks can grow; they cannot shrink.</p>
+      </div>
+      <div class="step" data-step="2" hidden>
+        <h3>Networking And Access</h3>
+        <div class="network-bar"><span>Network</span><div class="network-select"><label><input type="radio" name="network" value="nat" checked> NAT</label><label><input type="radio" name="network" value="bridged"> Bridged</label></div></div>
+        <div id="bridge-label" hidden><label class="bridge-primary">Host Interface<select name="bridge" id="bridge"></select></label><details class="access-options"><summary>Additional Interfaces</summary><div id="extra-bridges"></div><button type="button" class="secondary" id="add-bridge">Add Interface</button><p class="hint">Use separate networks for additional bridged adapters.</p></details></div>
+        
+        <details class="access-options" id="forward-options"><summary>Port Forwarding</summary><p class="hint">Mac Host Port → Guest NAT Port</p><div id="port-forwards"></div><button type="button" class="secondary" id="add-forward">Add Port Forward</button></details>
+        <details class="access-options" id="share-options"><summary>Directory Shares</summary><div id="directory-shares"></div><button type="button" class="secondary" id="add-share">Add Directory Share</button></details>
+        <div class="divider"></div>
+        <div class="ssh-key-choice"><span>Install SSH Public Key</span><button id="use-keys" type="button" class="toggle-button" role="switch" aria-label="Install SSH Public Key" aria-checked="true"><span class="toggle-track" aria-hidden="true"></span></button></div>
+        <div id="ssh-fields"><label id="public-key-fields">Public Key File(s)<textarea id="public-keys" rows="2" spellcheck="false"></textarea><small>One .pub path per line. Private keys stay on your Mac.</small></label><div class="row"><label><span id="username-label">Guest Username</span><input id="ssh-user" autocomplete="off"></label><label>Guest Password<input type="password" id="guest-password" autocomplete="new-password" maxlength="1024" placeholder="Optional"><small>Sets the account password and enables SSH password login.</small></label></div><label id="password-label">Template Login Password<input type="password" id="password" autocomplete="off"><small>Authenticates existing image access during setup.</small></label></div>
+        <div id="cloud-options" hidden><label>Hostname<input id="hostname" placeholder="Defaults to the machine name" maxlength="63"></label></div>
+        <details class="access-options" id="build-users-options"><summary>Additional Users <span class="count" id="build-users-count">0</span></summary><p class="hint">SSH Public Key Or Password · Passwordless Sudo</p><div id="build-users"></div></details>
+        <details class="access-options" id="software-options"><summary>Software Bundles</summary><p class="hint">Packages must be available in the guest repositories. macOS uses Homebrew.</p><div id="bundle-options" class="bundle-options"></div><label>Additional packages<textarea id="packages" rows="2" placeholder="git, jq" spellcheck="false"></textarea><small>Comma- or whitespace-separated package names. Initial Linux builds also upgrade installed packages.</small></label><p class="banner warning" id="package-build-warning" role="note" hidden></p></details>
+        <p class="hint" id="ssh-hint">The image must already have SSH enabled. For a new installation, enable SSH in the guest before finishing setup.</p>
+      </div>
+      <div class="step" data-step="3" hidden>
+        <h3>Review</h3>
+        <div id="review" class="review"></div><div class="banner" id="review-note"></div>
+        <label class="check" id="headless-label"><input type="checkbox" id="headless" checked> Run headless</label>
+      </div>
+      <div id="wizard-error" class="banner error" role="alert" hidden></div>
+      <div class="dialog-footer"><button type="button" class="secondary" id="back">Back</button><div id="final-actions" hidden><button type="button" class="secondary" id="download-only">Download only</button><button type="button" class="secondary" id="build-only">Build only</button><button type="button" class="secondary" id="save-profile">Save deployment profile</button></div><button type="submit" class="primary" id="next">Continue →</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="action-dialog"><div class="dialog-top"><h2 id="action-title"></h2><button class="close" id="close-action" aria-label="Close dialog">×</button></div><p id="action-description"></p><div id="action-fields"></div><div id="action-error" class="banner error" role="alert" hidden></div><div class="dialog-footer"><button class="secondary" id="cancel-action">Cancel</button><button class="primary" id="confirm-action">Confirm</button></div></dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>

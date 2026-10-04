@@ -1,0 +1,21 @@
+# AppleTart VM users. Import during provisioning or from Manage Users.
+# Replace the example key with the full contents of your SSH .pub file.
+# Add more user entries or keys as needed. Do not include private keys.
+# Supply public keys, a password, or both. Key-only accounts have locked passwords.
+# Passwords in YAML are plain text: protect and delete the file after use.
+# Passwords are never saved in VM configurations or deployment profiles.
+# Every listed user receives passwordless sudo for all commands.
+# For existing login accounts, keys are appended and sudo access is enabled.
+version: 1
+users:
+  - username: developer
+    ssh_authorized_keys:
+      - "ssh-ed25519 REPLACE_WITH_YOUR_PUBLIC_KEY developer@laptop"
+  # - username: another.user
+  #   ssh_authorized_keys:
+  #     - "ssh-ed25519 REPLACE_WITH_ANOTHER_PUBLIC_KEY another@laptop"
+
+  # Password-only example (uncomment to enable):
+  # - username: analyst
+  #   password: "REPLACE_WITH_A_PASSWORD"
+  #   ssh_authorized_keys: []

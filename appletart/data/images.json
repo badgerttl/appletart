@@ -1,0 +1,1320 @@
+{
+  "ubuntu": {
+    "label": "Ubuntu",
+    "family": "linux",
+    "source_kind": "tart",
+    "source": "ghcr.io/cirruslabs/ubuntu:24.04",
+    "sha256": "",
+    "ssh_user": "admin",
+    "bootstrap_password": "admin",
+    "description": "Published ARM64 Tart template.",
+    "versions": [
+      {
+        "label": "24.04",
+        "source": "ghcr.io/cirruslabs/ubuntu:24.04",
+        "source_kind": "tart"
+      },
+      {
+        "label": "22.04",
+        "source": "ghcr.io/cirruslabs/ubuntu:22.04",
+        "source_kind": "tart"
+      }
+    ],
+    "icon": "ubuntu"
+  },
+  "debian": {
+    "label": "Debian",
+    "family": "linux",
+    "source_kind": "tart",
+    "source": "ghcr.io/cirruslabs/debian:trixie",
+    "sha256": "",
+    "ssh_user": "admin",
+    "bootstrap_password": "admin",
+    "description": "Published ARM64 Tart template.",
+    "versions": [
+      {
+        "label": "trixie",
+        "source": "ghcr.io/cirruslabs/debian:trixie",
+        "source_kind": "tart"
+      }
+    ],
+    "icon": "debian"
+  },
+  "fedora": {
+    "label": "Fedora",
+    "family": "linux",
+    "source_kind": "tart",
+    "source": "ghcr.io/cirruslabs/fedora:42",
+    "sha256": "",
+    "ssh_user": "admin",
+    "bootstrap_password": "admin",
+    "description": "Published ARM64 Tart template.",
+    "versions": [
+      {
+        "label": "42",
+        "source": "ghcr.io/cirruslabs/fedora:42",
+        "source_kind": "tart"
+      }
+    ],
+    "icon": "fedora"
+  },
+  "rocky": {
+    "label": "Rocky Linux",
+    "family": "linux",
+    "source_kind": "tart",
+    "source": "ghcr.io/cirruslabs/rocky:9",
+    "sha256": "",
+    "ssh_user": "admin",
+    "bootstrap_password": "admin",
+    "description": "Published ARM64 Tart template.",
+    "versions": [
+      {
+        "label": "9",
+        "source": "ghcr.io/cirruslabs/rocky:9",
+        "source_kind": "tart"
+      }
+    ],
+    "icon": "rocky"
+  },
+  "ubuntu-runner-arm64": {
+    "label": "Ubuntu Runner",
+    "family": "linux",
+    "source_kind": "tart",
+    "source": "ghcr.io/cirruslabs/ubuntu-runner-arm64:24.04",
+    "sha256": "",
+    "ssh_user": "admin",
+    "bootstrap_password": "admin",
+    "description": "Published ARM64 Tart template.",
+    "versions": [
+      {
+        "label": "24.04",
+        "source": "ghcr.io/cirruslabs/ubuntu-runner-arm64:24.04",
+        "source_kind": "tart"
+      },
+      {
+        "label": "22.04",
+        "source": "ghcr.io/cirruslabs/ubuntu-runner-arm64:22.04",
+        "source_kind": "tart"
+      }
+    ],
+    "icon": "ubuntu"
+  },
+  "macos": {
+    "label": "macOS",
+    "family": "macos",
+    "source_kind": "tart",
+    "source": "ghcr.io/cirruslabs/macos-tahoe-base:latest",
+    "sha256": "",
+    "ssh_user": "admin",
+    "bootstrap_password": "admin",
+    "description": "Published macOS templates. Choose a release, variant and image tag.",
+    "versions": [
+      {
+        "label": "Golden Gate \u00b7 Base \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-golden-gate-base:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Golden Gate \u00b7 Vanilla \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-golden-gate-vanilla:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Golden Gate \u00b7 Vanilla \u00b7 27.0",
+        "source": "ghcr.io/cirruslabs/macos-golden-gate-vanilla:27.0",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Golden Gate \u00b7 Xcode \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-golden-gate-xcode:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Golden Gate \u00b7 Xcode \u00b7 27",
+        "source": "ghcr.io/cirruslabs/macos-golden-gate-xcode:27",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Base \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-base:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.0",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.0",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.1",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.2",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.3",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.4",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.5",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.6.1",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.6.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Vanilla \u00b7 26.6.2",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-vanilla:26.6.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26-beta-7",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26-beta-7",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.0.1",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.0.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.1",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.1-beta",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.1-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.1-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.1-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.1-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.1-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.1-rc",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.1-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.1.1",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.1.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.2",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.2-beta",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.2-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.2-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.2-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.2-rc",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.2-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.3",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.3-rc",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.3-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.4",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.4-rc",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.4-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.4.1",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.4.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.5",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 26.5-beta",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:26.5-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 27",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:27",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 27-beta-4",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:27-beta-4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Tahoe \u00b7 Xcode \u00b7 27-beta-6",
+        "source": "ghcr.io/cirruslabs/macos-tahoe-xcode:27-beta-6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Base \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-base:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.0",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.0",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.0-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.0-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.0-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.0-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.0-beta-8",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.0-beta-8",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.0-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.0-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1-beta-1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1-beta-1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1-beta-6",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1-beta-6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.1.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.1.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.3.2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.3.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.4",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.4.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.4.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.5",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.6",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.6.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.6.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.7",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.7",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.7.3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.7.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Vanilla \u00b7 15.7.7",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-vanilla:15.7.7",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 15.4",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:15.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.1-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.1-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.1-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.1-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.2-beta-1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.2-beta-1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.2-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.2-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.2-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.2-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.3-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.3-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.4",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 16.4-beta",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:16.4-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-beta",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-beta-4",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-beta-4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-beta-5",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-beta-5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-beta-6",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-beta-6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-beta-7",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-beta-7",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.1-beta",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.1-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.1-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.1-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.1-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.1-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.1-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.1-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.1.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.1.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.2-beta",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.2-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.2-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.2-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.2-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.2-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.3-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.3-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.4",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.4-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.4-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.4-rc",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.4-rc",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.4.1",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.4.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.5-beta",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.5-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sequoia \u00b7 Xcode \u00b7 26.6",
+        "source": "ghcr.io/cirruslabs/macos-sequoia-xcode:26.6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Base \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-base:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14-RC",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14-RC",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14-beta",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.1",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.3",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.4.1",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.4.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.5",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.6",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.6.1",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.6.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.7.6",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.7.6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.7.7",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.7.7",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.8",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.8",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.8.3",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.8.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Vanilla \u00b7 14.8.7",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-vanilla:14.8.7",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 15",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:15",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 15.0.1",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:15.0.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 15.1",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:15.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 15.2",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:15.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 15.3",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:15.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 15.4",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:15.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16-beta",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16-beta-4",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16-beta-4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16-beta-6",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16-beta-6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16.1",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16.1-beta",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16.1-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Xcode \u00b7 16.2-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-sonoma-xcode:16.2-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Base \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-ventura-base:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.0",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.0",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.2",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.2.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.2.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.3",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.3.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.3.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.4",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.5.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.5.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Vanilla \u00b7 13.6",
+        "source": "ghcr.io/cirruslabs/macos-ventura-vanilla:13.6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 13.4.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:13.4.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14-beta-4",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14-beta-4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14-beta-5",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14-beta-5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14-beta-6",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14-beta-6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.0.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.0.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.1-RC",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.1-RC",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.1-RC-2",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.1-RC-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.1-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.1-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.2",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.2-RC",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.2-RC",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.3",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.3-RC-2",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.3-RC-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.3-beta",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.3-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.3-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.3-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 14.3.1",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:14.3.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 15",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:15",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 15-beta",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:15-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 15-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:15-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 15-beta-5",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:15-beta-5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Ventura \u00b7 Xcode \u00b7 15.4",
+        "source": "ghcr.io/cirruslabs/macos-ventura-xcode:15.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Base \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-monterey-base:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.3.1",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.3.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.4",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.5",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.5",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.5-beta",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.5-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.5.1",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.5.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.6.1",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.6.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Vanilla \u00b7 12.7.6",
+        "source": "ghcr.io/cirruslabs/macos-monterey-vanilla:12.7.6",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 latest",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:latest",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 13",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:13",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 13.3.1",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:13.3.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 13.4",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:13.4",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 13.4-RC",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:13.4-RC",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 13.4.1",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:13.4.1",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 14",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:14",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 14-beta",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:14-beta",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 14-beta-2",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:14-beta-2",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Monterey \u00b7 Xcode \u00b7 14-beta-3",
+        "source": "ghcr.io/cirruslabs/macos-monterey-xcode:14-beta-3",
+        "source_kind": "tart",
+        "minimum_disk_gb": 140
+      },
+      {
+        "label": "Sonoma \u00b7 Runner",
+        "source": "ghcr.io/cirruslabs/macos-runner:sonoma",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Sequoia \u00b7 Runner",
+        "source": "ghcr.io/cirruslabs/macos-runner:sequoia",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Tahoe \u00b7 Runner",
+        "source": "ghcr.io/cirruslabs/macos-runner:tahoe",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      },
+      {
+        "label": "Golden-Gate \u00b7 Runner",
+        "source": "ghcr.io/cirruslabs/macos-runner:golden-gate",
+        "source_kind": "tart",
+        "minimum_disk_gb": 50
+      }
+    ],
+    "icon": "macos",
+    "minimum_disk_gb": 50
+  },
+  "kali": {
+    "label": "Kali Linux",
+    "family": "linux",
+    "source_kind": "cloud",
+    "source": "https://kali.download/cloud-images/kali-2026.2/kali-linux-2026.2-cloud-genericcloud-arm64.tar.xz",
+    "sha256": "9ab19c28d049fdc6f1d5d30f6cc93b8b01997f11c89f6992f690c07b16b7b7e4",
+    "ssh_user": "kali",
+    "description": "ARM64 cloud disk. Software bundles are optional.",
+    "versions": [
+      {
+        "label": "2026.2 (latest defined)",
+        "source_kind": "cloud",
+        "source": "https://kali.download/cloud-images/kali-2026.2/kali-linux-2026.2-cloud-genericcloud-arm64.tar.xz",
+        "sha256": "9ab19c28d049fdc6f1d5d30f6cc93b8b01997f11c89f6992f690c07b16b7b7e4"
+      }
+    ],
+    "icon": "kali"
+  },
+  "other": {
+    "label": "Other Linux",
+    "family": "linux",
+    "source_kind": "iso",
+    "source": "",
+    "sha256": "",
+    "ssh_user": "",
+    "description": "Bring a compatible ARM64 cloud disk, installer or Tart template.",
+    "versions": [],
+    "icon": "other"
+  },
+  "rhel": {
+    "label": "Red Hat Enterprise Linux",
+    "family": "linux",
+    "source_kind": "cloud",
+    "source": "",
+    "sha256": "",
+    "ssh_user": "vmadmin",
+    "description": "Select your ARM64 RHEL cloud disk. Initial system upgrades require configured package repositories.",
+    "versions": [],
+    "icon": "rhel"
+  }
+}

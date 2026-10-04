@@ -1,0 +1,11 @@
+version = 1
+
+[[vms]]
+name = "ubuntu-dev"
+os = "ubuntu"
+image = "ghcr.io/cirruslabs/ubuntu:latest"
+cpu = 2
+memory_mb = 4096
+disk_gb = 40
+ssh_user = "admin"
+ssh_public_keys = ["~/.ssh/id_ed25519.pub"]
