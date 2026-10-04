@@ -43,10 +43,13 @@ double-click **AppleTart.command** in Finder; it uses this project's `.venv`
 when available, otherwise `python3` on your `PATH`.
 
 The dashboard opens at [http://127.0.0.1:4991](http://127.0.0.1:4991) and runs
-in the background under macOS `launchd`. The command returns once it is ready;
+as a detached background process. The command returns once it is ready;
 you can close the terminal and browser. Running the launcher again with the
 same data directory reopens the existing dashboard. Finder's **AppleTart.command**
 uses this behavior too.
+The process inherits the launcher's local-network access, so SSH health checks
+work when started from Terminal or Finder. Status and stop commands verify the
+process identity before using its saved PID.
 The service runs for the current login session; launch it again after logging
 in or rebooting. It does not automatically start at login.
 
