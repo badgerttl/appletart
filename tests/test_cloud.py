@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import MagicMock, Mock, patch
 
 from appletart.catalog import Machine
-from appletart.cloud import cloud_config, convert_disk, provision_cloud, write_seed
+from appletart.cloud import NETWORK_BACKEND_SETUP, cloud_config, convert_disk, provision_cloud, write_seed
 from appletart.deployment import DeploymentError
 from appletart.lifecycle import Lifecycle
 from appletart.operations import Cancellation, JobCancelled, scope
@@ -147,6 +147,8 @@ class CloudTests(unittest.TestCase):
         self.assertNotIn("kali-desktop-xfce", user["packages"])
         self.assertIn("vim", user["packages"])
         self.assertIn(["systemctl", "set-default", "multi-user.target"], user["runcmd"])
+        self.assertIn(["sh", "-c", NETWORK_BACKEND_SETUP], user["runcmd"])
+        self.assertIn("systemctl enable netplan-configure.service", NETWORK_BACKEND_SETUP)
         self.assertEqual(json.loads((directory / "seed-data/meta-data").read_text())["instance-id"], "instance-1")
         network = json.loads((directory / "seed-data/network-config").read_text())["ethernets"]["appletart"]
         self.assertEqual(network["match"]["macaddress"], "02:00:00:00:00:01")

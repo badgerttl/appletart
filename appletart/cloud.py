@@ -29,7 +29,7 @@ from . import diagnostics, guest_agent, guest_os
 
 CLOUD_SSH_TIMEOUT = 30 * 60
 CLOUD_INIT_TIMEOUT = 30 * 60
-CLOUD_CONFIG_VERSION = 10
+CLOUD_CONFIG_VERSION = 11
 CLOUD_AGENT_TIMEOUT = 90
 
 SSH_SERVICE_SETUP = """set -eu
@@ -40,6 +40,16 @@ elif systemctl cat sshd.service >/dev/null 2>&1; then
 else
     echo 'The cloud image must include an OpenSSH server (ssh.service or sshd.service).' >&2
     exit 1
+fi
+"""
+
+# Netplan 1.2 renders backend configuration from netplan-configure.service
+# instead of its systemd generator. A distribution preset can install that unit
+# disabled during the initial upgrade (Kali does), leaving every later boot
+# without network configuration. Enable it wherever the guest provides it.
+NETWORK_BACKEND_SETUP = """set -eu
+if systemctl cat netplan-configure.service >/dev/null 2>&1; then
+    systemctl enable netplan-configure.service
 fi
 """
 
@@ -247,7 +257,7 @@ def cloud_config(machine, keys: list[str], mac: str = "", *, boot_only: bool = F
         "growpart": {"mode": "auto", "devices": ["/"], "ignore_growroot_disabled": False},
         "resize_rootfs": True, "package_update": initial_build or bool(packages),
         "package_upgrade": initial_build, "package_reboot_if_required": False,
-        "runcmd": [["sh", "-c", SSH_SERVICE_SETUP],
+        "runcmd": [["sh", "-c", SSH_SERVICE_SETUP], ["sh", "-c", NETWORK_BACKEND_SETUP],
                    ["systemctl", "set-default", "multi-user.target"]],
     }
     if packages:
