@@ -239,7 +239,11 @@ def cloud_config(machine, keys: list[str], mac: str = "", *, boot_only: bool = F
         # so this edit cannot recreate accounts, rotate host keys or reinstall
         # software. Keep disk expansion working on subsequent resource edits.
         commands = [["sh", "-c", capabilities.cloud_network_setup(mac)]] if mac else []
-        return {"cloud_init_modules": ["bootcmd", "growpart", "resizefs"],
+        # A new instance ID makes init-local set the hostname from image
+        # defaults (Kali ships "hostname: kali") before user-data is read.
+        # set_hostname then reapplies this VM's name from the user-data.
+        return {"hostname": machine.hostname, "fqdn": machine.hostname,
+                "cloud_init_modules": ["bootcmd", "set_hostname", "growpart", "resizefs"],
                 "cloud_config_modules": [], "cloud_final_modules": [],
                 "ssh_deletekeys": False, "package_update": False, "package_upgrade": False,
                 "growpart": {"mode": "auto", "devices": ["/"], "ignore_growroot_disabled": False},

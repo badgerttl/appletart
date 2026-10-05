@@ -349,6 +349,7 @@ function goldenOptions() {
 async function chooseGolden(image) {
   if (!await openWizard(image.os)) return;
   $("source-kind").value = "golden"; goldenOptions(); $("golden-source").value = image.name;
+  if (image.ssh_user) $("ssh-user").value = image.ssh_user;
   $("disk").value = Math.max(Number($("disk").value), image.disk_gb); renderBundleChoices([]); syncSource();
 }
 function launchGoldenDialog(image) {
@@ -359,7 +360,7 @@ function launchGoldenDialog(image) {
     () => submit("create", {config: {
       name: $("golden-vm-name").value.trim(), os: image.os, size: "small", network: "nat",
       disk_gb: Math.max(catalog.sizes.small.disk_gb, image.disk_gb), source_kind: "golden", source: image.name,
-      ssh_user: catalog.images[image.os]?.ssh_user || "vmadmin", ssh_public_keys: defaultSSHKeys(),
+      ssh_user: image.ssh_user || catalog.images[image.os]?.ssh_user || "vmadmin", ssh_public_keys: defaultSSHKeys(),
       packages: [], software_bundles: []
     }, headless: true}), "Launch VM");
 }

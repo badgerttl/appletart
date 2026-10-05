@@ -377,6 +377,7 @@ class ManagementTests(unittest.TestCase):
         config = self.golden_image()
         self.api.save_profile("from-golden", {**config, "source_kind": "golden", "source": "golden"})
         self.assertEqual(self.api.image_listing()[0]["references"], ["Referenced by from-golden"])
+        self.assertEqual(self.api.image_listing()[0]["ssh_user"], config["ssh_user"])
         with self.assertRaisesRegex(DeploymentError, "protected"):
             self.api.delete_image("golden", "golden", self.report)
         self.api.delete_profile("from-golden", "from-golden")

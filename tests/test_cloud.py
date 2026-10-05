@@ -173,7 +173,8 @@ class CloudTests(unittest.TestCase):
         with patch("appletart.cloud.run_tool", side_effect=make_iso):
             seed = write_seed(machine, [], directory, "edited-instance", "02:00:00:00:00:01", boot_only=True)
         user = json.loads((directory / "seed-data/user-data").read_text().split("\n", 1)[1])
-        self.assertEqual(user["cloud_init_modules"], ["bootcmd", "growpart", "resizefs"])
+        self.assertEqual(user["cloud_init_modules"], ["bootcmd", "set_hostname", "growpart", "resizefs"])
+        self.assertEqual((user["hostname"], user["fqdn"]), ("kali-test", "kali-test"))
         self.assertEqual(user["cloud_config_modules"], [])
         self.assertEqual(user["cloud_final_modules"], [])
         self.assertFalse(user["ssh_deletekeys"])

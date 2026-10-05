@@ -278,6 +278,7 @@ class Lifecycle:
 
     def image_listing(self):
         return [{"name": image["config"]["name"], "os": image["config"]["os"], "phase": image["phase"],
+                 "ssh_user": image["config"].get("ssh_user", ""),
                  "disk_gb": image["config"]["disk_gb"], "desktop": image["config"].get("desktop", "none"),
                  "source_vm": image["source_vm"], "created_at": image["created_at"],
                  "version": image.get("version", "1"), "notes": image.get("notes", ""),
