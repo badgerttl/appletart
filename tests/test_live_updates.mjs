@@ -193,12 +193,12 @@ test("appearance restores palette and mode and keeps the palette when toggling m
   ui.document.getElementById("theme-toggle").onclick();
   assert.equal(ui.document.documentElement.dataset.theme, "dark");
   assert.equal(ui.document.documentElement.dataset.palette, "grape");
-  ui.run('setPalette("bondi");');
+  ui.run('setPalette("tokyo-night");');
   assert.equal(ui.document.getElementById("palette-grape").checked, false);
-  assert.equal(ui.document.getElementById("palette-bondi").checked, true);
-  assert.equal(saved.get("appletart-palette"), "bondi");
+  assert.equal(ui.document.getElementById("palette-tokyo-night").checked, true);
+  assert.equal(saved.get("appletart-palette"), "tokyo-night");
   ui.run('initializeTheme();');
-  assert.equal(ui.document.documentElement.dataset.palette, "bondi");
+  assert.equal(ui.document.documentElement.dataset.palette, "tokyo-night");
   assert.equal(ui.document.documentElement.dataset.theme, "dark");
 });
 

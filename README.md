@@ -389,7 +389,7 @@ must exist whenever the VM starts.
 
 The dashboard lists managed and external Tart VMs, with search, refresh,
 platform icons, and remembered appearance preferences. **Settings → Appearance**
-offers Orchard, Macintosh, Graphite, Bondi Blue, iMac Grape, and Classic Rainbow
+offers Orchard, Macintosh, Graphite, iMac Grape, Tokyo Night, and Classic Rainbow
 palettes, each in light or dark mode. Changes apply immediately and are saved in
 this browser. The header’s sun/moon button switches modes while keeping your
 palette. Hover over action icons for their names.

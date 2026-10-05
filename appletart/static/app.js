@@ -132,8 +132,8 @@ const themePalettes = [
   {id: "orchard", name: "Orchard", detail: "AppleTart’s original garden greens."},
   {id: "macintosh", name: "Macintosh", detail: "Silver surfaces and a crisp Apple blue."},
   {id: "graphite", name: "Graphite", detail: "Quiet neutrals inspired by Space Gray."},
-  {id: "bondi", name: "Bondi Blue", detail: "The teal spirit of the original iMac."},
   {id: "grape", name: "iMac Grape", detail: "Playful purple from the colorful iMac era."},
+  {id: "tokyo-night", name: "Tokyo Night", detail: "Midnight navy with blue and violet city lights."},
   {id: "rainbow", name: "Classic Rainbow", detail: "Warm ivory with a six-color flourish."}
 ];
 function setTheme(theme) {

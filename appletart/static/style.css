@@ -204,26 +204,53 @@ th { color: var(--muted); }
 #build-users .users-toolbar { margin: 12px 0 0; }
 #build-users .users-toolbar a { font-size: 13px; }
 
-/* Apple-inspired palettes. Mode and palette are independent preferences. */
+/* Appearance palettes. Mode and palette are independent preferences. */
 [data-palette="macintosh"] { --theme-hue: 212; --theme-saturation: 85%; --theme-accent: #0868ce; --theme-accent-dark: #75baff; }
 [data-palette="graphite"] { --theme-hue: 220; --theme-saturation: 5%; --theme-accent: #535966; --theme-accent-dark: #c0c6d2; }
-[data-palette="bondi"] { --theme-hue: 183; --theme-saturation: 65%; --theme-accent: #007c83; --theme-accent-dark: #62d5da; }
 [data-palette="grape"] { --theme-hue: 277; --theme-saturation: 54%; --theme-accent: #8241b1; --theme-accent-dark: #d0a0f1; }
 [data-palette="rainbow"] { --theme-hue: 40; --theme-saturation: 30%; --theme-accent: #396c35; --theme-accent-dark: #a1d69b; }
-[data-theme="light"] :is([data-palette="macintosh"], [data-palette="graphite"], [data-palette="bondi"], [data-palette="grape"], [data-palette="rainbow"]),
-:root[data-theme="light"][data-palette]:not([data-palette="orchard"]) {
+[data-theme="light"] :is([data-palette="macintosh"], [data-palette="graphite"], [data-palette="grape"], [data-palette="rainbow"]),
+:root[data-theme="light"][data-palette]:not([data-palette="orchard"]):not([data-palette="tokyo-night"]) {
   --ink: #24262b; --muted: #62656c; --paper: hsl(var(--theme-hue) var(--theme-saturation) 97%);
   --line: hsl(var(--theme-hue) 15% 84%); --green: var(--theme-accent); --surface: #fff;
   --sidebar-surface: hsl(var(--theme-hue) 20% 93%); --field-surface: #fff;
   --selection-surface: hsl(var(--theme-hue) 30% 91%); --button-fill: var(--theme-accent); --button-ink: #fff;
 }
-[data-theme="dark"] :is([data-palette="macintosh"], [data-palette="graphite"], [data-palette="bondi"], [data-palette="grape"], [data-palette="rainbow"]),
-:root[data-theme="dark"][data-palette]:not([data-palette="orchard"]) {
+[data-theme="dark"] :is([data-palette="macintosh"], [data-palette="graphite"], [data-palette="grape"], [data-palette="rainbow"]),
+:root[data-theme="dark"][data-palette]:not([data-palette="orchard"]):not([data-palette="tokyo-night"]) {
   --ink: #f0f1f5; --muted: #b0b3bc; --paper: hsl(var(--theme-hue) 13% 10%);
   --line: hsl(var(--theme-hue) 12% 28%); --green: var(--theme-accent-dark); --surface: hsl(var(--theme-hue) 12% 15%);
   --sidebar-surface: hsl(var(--theme-hue) 15% 12%); --field-surface: hsl(var(--theme-hue) 12% 12%);
   --selection-surface: hsl(var(--theme-hue) 24% 22%); --button-fill: var(--theme-accent-dark); --button-ink: #14161b;
 }
+/* Explicit Tokyo Night colors also give its preview an independent palette. */
+[data-theme="dark"] [data-palette="tokyo-night"],
+:root[data-theme="dark"][data-palette="tokyo-night"] {
+  --ink: #c0caf5; --muted: #a9b1d6; --paper: #1a1b26; --line: #414868;
+  --green: #7aa2f7; --accent: #bb9af7; --danger: #f7768e; --surface: #24283b;
+  --sidebar-surface: #16161e; --field-surface: #1f2335; --selection-surface: #292e42;
+  --button-fill: #7aa2f7; --button-ink: #1a1b26;
+  --success-surface: #283b35; --success-ink: #9ece6a;
+  --warning-surface: #3b3440; --warning-ink: #e0af68;
+  --error-surface: #412b3b; --error-ink: #f7768e;
+}
+[data-theme="light"] [data-palette="tokyo-night"],
+:root[data-theme="light"][data-palette="tokyo-night"] {
+  --ink: #343b58; --muted: #565f89; --paper: #e1e2e7; --line: #b4b8ce;
+  --green: #2959aa; --accent: #7847bd; --danger: #b52b50; --surface: #f0f1f5;
+  --sidebar-surface: #d5d6db; --field-surface: #f0f1f5; --selection-surface: #c4cee6;
+  --button-fill: #2959aa; --button-ink: #fff;
+  --success-surface: #d5dfd6; --success-ink: #385f0d;
+  --warning-surface: #eee0ce; --warning-ink: #80520e;
+  --error-surface: #f0d7df; --error-ink: #b52b50;
+}
+:root[data-palette="tokyo-night"] .badge { background: var(--selection-surface); color: var(--muted); }
+:root[data-palette="tokyo-night"] :is(.badge.running, .banner) { background: var(--success-surface); color: var(--success-ink); }
+:root[data-palette="tokyo-night"] :is(.badge.installing, .banner.warning) { background: var(--warning-surface); color: var(--warning-ink); border-color: var(--warning-ink); }
+:root[data-palette="tokyo-night"] .banner.error { background: var(--error-surface); color: var(--error-ink); }
+:root[data-palette="tokyo-night"] .status-dot { background: var(--success-ink); }
+:root[data-palette="tokyo-night"] .os-icon.other { background: var(--selection-surface); color: var(--accent); }
+.theme-card[data-palette="tokyo-night"] .theme-preview-bar { background: var(--accent); }
 :root[data-palette]:not([data-palette="orchard"]) .sidebar { background: var(--sidebar-surface); }
 :root[data-palette]:not([data-palette="orchard"]) .nav.active { background: var(--selection-surface); }
 :root[data-palette]:not([data-palette="orchard"]) :is(.secondary, .stats, .machine, .image-card, .tile, dialog, .settings-card, .library-list:has(.library-row)) { background: var(--surface); }
@@ -236,6 +263,10 @@ th { color: var(--muted); }
 :root[data-palette]:not([data-palette="orchard"]) .control:hover { background: var(--selection-surface); }
 :root[data-palette]:not([data-palette="orchard"]) .toggle-button[aria-checked="true"] .toggle-track,
 :root[data-palette]:not([data-palette="orchard"]) .toggle input:checked + .toggle-track { background: var(--button-fill); }
+:root[data-palette="tokyo-night"] .toggle-track { background: var(--muted); }
+:root[data-palette="tokyo-night"] .toggle-track::after { background: var(--button-ink); }
+:root[data-palette="tokyo-night"] .toggle input:focus-visible + .toggle-track { outline-color: var(--green); }
+:root[data-palette="tokyo-night"] .danger { background: var(--danger); color: var(--button-ink); }
 :root[data-palette="rainbow"] .brand::before { content: ""; width: 5px; height: 32px; flex-shrink: 0; border-radius: 3px; background: linear-gradient(to bottom, #61a644 0 16.66%, #f4ca38 16.66% 33.33%, #e99431 33.33% 50%, #d6504d 50% 66.66%, #a264ad 66.66% 83.33%, #4e9ac6 83.33%); }
 .appearance-settings { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .appearance-settings .section-heading { margin-bottom: 12px; align-items: center; }
