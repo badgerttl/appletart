@@ -32,7 +32,7 @@ Requirements:
 From this project directory:
 
 ```sh
-brew install cirruslabs/cli/tart qemu
+brew install openai/tools/tart qemu
 python3 -m venv .venv
 .venv/bin/python -m pip install -e .
 .venv/bin/python -m appletart
